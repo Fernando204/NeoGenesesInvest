@@ -8,26 +8,58 @@
     <title>Negenesis</title>
 </head>
 <body>
+    
+    <div class="mainPage">
+        <div class="mainText">
+            <h1>Neogenesis</h1>
+            <h2>Seus Investimentos, em um só lugar</h2>
+        
+
+            <div class="benefits">
+                <div class="benefit">
+                    <h2>📈 Monitoramento Completo</h2>
+                    <p>Acompanhe o desempenho dos seus investimentos em tempo real.</p>
+                </div>
+                <div class="benefit">
+                    <h2>🔔 Alertas Personalizados</h2>
+                    <p>Receba notificações sobre oscilações no mercado.</p>
+                </div>
+                <div class="benefit">
+                    <h2>🔍 Análises Detalhadas</h2>
+                    <p>Gráficos interativos para entender sua rentabilidade.</p>
+                </div> 
+            </div>
+        </div>
+    </div>
+
     <div class="sidebar">
         <a href="/Front-end/main.html" class="menu-item" data-tooltip="Início"><i class="material-symbols-outlined">home</i></a>
         <a href="#" class="menu-item" data-tooltip="Usuário"><i class="material-symbols-outlined">person</i></a>
         <a href="#" class="menu-item" data-tooltip="Investimentos"><i class="material-symbols-outlined">payments</i></a>
         <a href="#" class="menu-item" data-tooltip="Notícias"><i class="material-symbols-outlined">newspaper</i></a>
-        <a href="#" class="menu-item" data-tooltip="Configurações" onclick="toggleSettings()"><i class="material-symbols-outlined">settings</i></a>
+        <a class="menu-item" data-tooltip="Configurações" onclick="toggleSettings()"><i class="material-symbols-outlined">settings</i></a>
         <a href="#" class="menu-item" data-tooltip="Ajuda"><i class="material-symbols-outlined">help</i></a>
     </div>
 
     <div class="settings-panel" id="settingsPanel">
         <h2>Configurações</h2>
         <label>
-            <input type="checkbox">
+            <input type="checkbox" id="toggleCheckbox-notification">
+            <span class="toggle"></span>
             Ativar Notificações
         </label>
         <label>
-            <input type="checkbox">
+            <input type="checkbox" id="toggleCheckbox-darkmode">
+            <span class="toggle"></span>
             Modo Escuro
         </label>
-        <button class="close-btn" onclick="toggleSettings()">Fechar</button>
+    </div>
+
+   
+    
+    <script src="src/main.js"></script>
+</body>
+</html>
     </div>
     
     <script src="src/main.js"></script>
