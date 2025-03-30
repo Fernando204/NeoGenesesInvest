@@ -1,5 +1,6 @@
 package com.example.negenesis;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,7 +10,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
+
+    @Column(name = "user_name")
     private String userName;
+
     private String email;
     private String password;
 
@@ -22,7 +26,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
-    public String getName(){
+    public String getUserName(){
         return userName;
     }
     public String getPassword(){

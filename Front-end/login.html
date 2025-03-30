@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css"> 
+    <link rel="stylesheet" href="styles/login.css"> 
 
     <title>Login</title>
 </head>
@@ -11,14 +11,15 @@
 <body>
     
     <div class="loginBox">
-        <input type="email" id="email" placeholder="Example@gmail.com">
-        <input type="password" id="password" placeholder="********">
-    </div>
-
-    <div class="registerBox">
-        <input type="text" placeholder="Username">
-        <input type="text" placeholder="Example@gmail.com">
-        <input type="password" placeholder="*****">
+        <div id="inputField">
+            <input type="email" id="email" placeholder="Example@gmail.com">
+            <input type="password" id="password" placeholder="********">
+            <button><strong>Entrar</strong></button>
+        </div>
+        <a class="recuperar">Esqueceu a senha?</a>
+        <div class="cadastro">
+            <p>Não tem uma conta?</p><a href="">Cadatre-se</a>
+        </div>
     </div>
     
     <script src="src/login.js"></script>
