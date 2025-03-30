@@ -6,18 +6,56 @@
 body{
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to top, #555, #ccc);
+    background: linear-gradient(to top, #007d82d2, #9cd7d3);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+.mainText {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.mainText h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.mainText h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.benefits {
+    margin-top: 350px;
+}
+
+.benefit {
+    margin: 15px 0;
+    background: rgba(0, 79, 81, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 50px;
 }
 
 .sidebar {
     width: 80px;
     height: 100vh;
-    background: #333;
+    background: #00afb5cb;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
     gap: 20px;
+    position: fixed;
 }
 
 .sidebar a {
@@ -35,14 +73,14 @@ body{
 }
 
 .sidebar a:hover {
-    background: #555;
+    background: #005456cb;
 }
 
 .sidebar a::after {
     content: attr(data-tooltip);
     position: absolute;
     left: 70px;
-    background: #000;
+    background: #004f51cb;
     color: white;
     padding: 5px 10px;
     font-size: 14px;
@@ -58,6 +96,10 @@ body{
     visibility: visible;
 }
 
+.menu-item {
+    cursor: pointer;
+}
+
 .content{
     flex: 1;
     padding: 20px;
@@ -70,7 +112,7 @@ body{
     right: -300px;
     width: 300px;
     height: 100vh;
-    background: #444;
+    background: #00afb5;
     color: white;
     padding: 20px;
     transition: right 0.3s ease;
@@ -85,19 +127,89 @@ body{
 }
 
 .settings-panel label {
-    display: block;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     margin-bottom: 10px;
 }
 
+.settings-panel .toggle {
+    width: 40px;
+    height: 20px;
+    background-color: #004244d2;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3;
+}
+
+.settings-panel .toggle::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: left 0.3s;
+}
+
 .settings-panel input[type="checkbox"] {
-    margin-right: 10px;
+    display: none;
+}
+
+.settings-panel input[type="checkbox"]:checked + .toggle {
+    background-color: #005456cb;
+}
+
+.settings-panel input[type="checkbox"]:checked + .toggle::before {
+    left: 22px;
 }
 
 .close-btn:hover {
     background: #666;
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+.darkmode {
+    background: linear-gradient(to top, #0e2929, #226666);
+    color: white;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+
+.darkmode .sidebar {
+    background: #005456;
+}
+
+.darkmode .sidebar a {
+    color: #ddd;
+}
+
+.darkmode .sidebar a:hover {
+    background: #003d3d;
+}
+
+.darkmode .sidebar a::after {
+    background: #003d3d;
+}
+
+.darkmode .settings-panel {
+    background: #003d3d;
+    color: white;
+}
+
+.darkmode .toggle {
+    background-color: #226666;
+}
+
+.darkmode .toggle::before {
+    background-color: #fff;
+}
+
+.darkmode input[type="checkbox"]:checked + .toggle {
+    background-color: #00afb5;
 }
