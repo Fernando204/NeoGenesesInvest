@@ -1,6 +1,17 @@
 function toggleSettings() {
-    const panel = document.getElementById('settingsPanel');
-    panel.classList.toggle('open');
+    const settingsPanel = document.getElementById('settingsPanel');
+    const profilePanel = document.getElementById('profilePanel');
+
+    settingsPanel.classList.toggle('open');
+    profilePanel.classList.remove('open');
+}
+
+function toggleProfile() {
+    const profilePanel = document.getElementById('profilePanel');
+    const settingsPanel = document.getElementById('settingsPanel');
+
+    profilePanel.classList.toggle('open');
+    settingsPanel.classList.remove('open');
 }
 
 const checkboxDarkmode = document.getElementById("toggleCheckbox-darkmode");

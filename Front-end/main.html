@@ -8,38 +8,35 @@
     <title>Negenesis</title>
 </head>
 <body>
-    
-    <div class="mainPage">
-        <div class="mainText">
-            <h1>Neogenesis</h1>
-            <h2>Seus Investimentos, em um só lugar</h2>
-        
-
-            <div class="benefits">
-                <div class="benefit">
-                    <h2>📈 Monitoramento Completo</h2>
-                    <p>Acompanhe o desempenho dos seus investimentos em tempo real.</p>
-                </div>
-                <div class="benefit">
-                    <h2>🔔 Alertas Personalizados</h2>
-                    <p>Receba notificações sobre oscilações no mercado.</p>
-                </div>
-                <div class="benefit">
-                    <h2>🔍 Análises Detalhadas</h2>
-                    <p>Gráficos interativos para entender sua rentabilidade.</p>
-                </div> 
-            </div>
-        </div>
-    </div>
-
+    <button class="loginBT" onclick="window.location.href='login.html'">Login</button>
     <div class="sidebar">
         <a href="/Front-end/main.html" class="menu-item" data-tooltip="Início"><i class="material-symbols-outlined">home</i></a>
-        <a href="#" class="menu-item" data-tooltip="Usuário"><i class="material-symbols-outlined">person</i></a>
+        <a class="menu-item" data-tooltip="Usuário" onclick="toggleProfile()"><i class="material-symbols-outlined">person</i></a>
         <a href="#" class="menu-item" data-tooltip="Investimentos"><i class="material-symbols-outlined">payments</i></a>
-        <a href="#" class="menu-item" data-tooltip="Notícias"><i class="material-symbols-outlined">newspaper</i></a>
+        <a href="#" class="menu-item" data-tooltip="Ferramentas"><i class="material-symbols-outlined">build</i></a>
         <a class="menu-item" data-tooltip="Configurações" onclick="toggleSettings()"><i class="material-symbols-outlined">settings</i></a>
         <a href="#" class="menu-item" data-tooltip="Ajuda"><i class="material-symbols-outlined">help</i></a>
     </div>
+    <div class="logo">
+        <img class="imagelogo" src="images/logo.png" alt="logo Neogenesis">
+        <h1>NEOGENESIS</h1><br><p>Investimentos</p>
+    </div>
+
+    <div class="tools">
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>
+            <div class="tool-description">Renda Fixa: Investimentos de baixo risco e retorno fixo.</div>
+        </div>
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>
+        </div>
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>  
+        </div>
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>
+        </div>
+     </div>    
 
     <div class="settings-panel" id="settingsPanel">
         <h2>Configurações</h2>
@@ -55,12 +52,13 @@
         </label>
     </div>
 
-   
-    
-    <script src="src/main.js"></script>
-</body>
-</html>
+    <div class="profile-panel" id="profilePanel">
+        <h2>Usuário</h2>
+        <label>
+        </label>
     </div>
+
+   
     
     <script src="src/main.js"></script>
 </body>
