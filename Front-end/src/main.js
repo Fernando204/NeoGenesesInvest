@@ -1,10 +1,25 @@
-const data = JSON.parse(localStorage.getItem("ngdb"));
-if (data.userName) {
-    document.getElementById('loginBT').innerHTML = data.userName;
-    console.log(data.userName);
-}else{
-    console.log("nenhum usuario logado");
-}
+// Verifica sessão ao carregar a página
+fetch('https://localhost:8080/user/session', {
+    method: 'GET',
+    credentials: 'include' // garante envio do cookie de sessão
+})
+.then(response => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error("Nenhum usuário autenticado.");
+    }
+})
+.then(data => {
+    // Exibe o nome do usuário no botão
+    if (data && data.name) {
+        document.getElementById('loginBT').innerHTML = data.name;
+        console.log("Usuário logado:", data.name);
+    }
+})
+.catch(err => {
+    console.log("Usuário não logado:", err.message);
+});
 
 function toggleSettings() {
     const settingsPanel = document.getElementById('settingsPanel');
@@ -73,9 +88,15 @@ toolItens.forEach((item,index)=>{
 })
 
 
-const closeSection = ()=>{
-    delete data.username;
-    localStorage.setItem("ngdb",JSON.stringify(data));
-
-    location.reload();
+function closeSession() {
+    fetch('https://localhost:8080/user/logout', {
+        method: 'POST',
+        credentials: 'include'
+    })
+    .then(() => {
+        location.reload(); // ou redireciona para login
+    })
+    .catch(err => {
+        console.error("Erro ao encerrar sessão:", err);
+    });
 }
