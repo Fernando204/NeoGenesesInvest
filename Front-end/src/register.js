@@ -1,8 +1,21 @@
 const bt = document.getElementById("enterBT");
+const errorLabel = document.getElementById("errorLabel");
 bt.addEventListener("click",()=>{
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const name = document.getElementById("UserName").value;
+
+    if(!email){
+        errorLabel.innerHTML = "Digite um Email valido";
+        return;
+    }else if (!name) {
+        errorLabel.innerHTML = "Digite um nome de usuário valido";
+        return;
+    }
+    else if(password.length < 8){
+        errorLabel.innerHTML = "Digite uma senha com no minimo 8 caracteres";
+        return;
+    }   
 
     fetch('http://localhost:8080/user/register',{
         method: "POST",
@@ -14,19 +27,26 @@ bt.addEventListener("click",()=>{
             return response.json();
         }else{
             return response.text().then(text =>{
-                alert(text);
+                errorLabel.innerHTML = text;
                 throw new Error(text);
             })
         }
     })
     .then(data =>{
-        const dat = JSON.parse(localStorage.getItem("ngdb")) || {};
+        let dat = {user: null}
 
-        dat.userName = data.name;
-        dat.userId = data.id; 
+        if (localStorage.getItem("ngdb")) {
+            localStorage.removeItem("ngdb");
+        }
+
+        const userDat = {
+            name: data.name,
+            id: data.id
+        }
+        dat.user = userDat
 
         localStorage.setItem("ngdb",JSON.stringify(dat));
-        alert(data.name+" registrado com sucesso");
+        errorLabel.innerHTML = (data.name+" registrado com sucesso");
 
         location.href = "index.html"
     });

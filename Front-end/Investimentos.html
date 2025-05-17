@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGinvest | investimentos</title>
+    <link rel="stylesheet" href="styles/investimentos.css">
+</head>
+<body>
+    <header>
+        <img id="logo" src="images/logoW.png" alt="logo Neogenesis">
+        <button onclick="window.location.href='login.html'" id="loginBT" class="loginBt">Login</button>
+    </header>
+    <div class="marketBar">
+        <h3 class="mrh1">Taxas do mercado:</h3>
+        <div class="rates">
+            <div class="rate">
+                <h3 class="rateValue">14,25</h3>
+                <hr class="line">
+                <h3 class="rateName">Selic</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">14,15</h3>
+                <hr class="line">
+                <h3 class="rateName">CDI</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">5,48</h3>
+                <hr class="line">
+                <h3 class="rateName">IPCA</h3>
+            </div>
+        </div>
+
+        <h3 class="etfh1">Fundos de imobiliários:</h3>
+        <div class="rates etf">
+            <div class="rate">
+                <h3 class="rateValue">9,56</h3>
+                <hr class="line">
+                <h3 class="rateName">MXRF11</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">8,93</h3>
+                <hr class="line">
+                <h3 class="rateName">GARE11</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">116,79</h3>
+                <hr class="line">
+                <h3 class="rateName">HGRU11</h3>
+            </div>
+        </div>
+
+        <h3 class="bracth1">Ações Brasileiras:</h3>
+        <div class="rates bract">
+            <div class="rate">
+                <h3 class="rateValue">35,92</h3>
+                <hr class="line">
+                <h3 class="rateName">TAEE11</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">14,57</h3>
+                <hr class="line">
+                <h3 class="rateName">ABEV3</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">28,93</h3>
+                <hr class="line">
+                <h3 class="rateName">BBAS3</h3>
+            </div>
+        </div>
+
+        <h3 class="usacth1">Ações Americanas:</h3>
+        <div class="rates usact">
+            <div class="rate">
+                <h3 class="rateValue">US$ 211,21</h3>
+                <hr class="line">
+                <h3 class="rateName">APPL</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">US$ 187,39</h3>
+                <hr class="line">
+                <h3 class="rateName">AMZN</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">US$ 109,09</h3>
+                <hr class="line">
+                <h3 class="rateName">NVDA</h3>
+            </div>
+        </div>
+    </div>
+    <section class="investArea">
+        <div class="investData">
+            <div class="createInvestments">
+                <h1>Novo investimento</h1>
+                <div class="investInfo">
+
+                    <h3>Tipo de Investimento:</h3>
+                    <select id="invest-type">
+                        <option value="renda-fixa">Renda fixa</option>
+                        <option value="ação">Ações</option>
+                        <option value="fundo">fundos</option>
+                        <option value="cripto">Cripto</option>
+                    </select>
+            
+                    <h3>Nome do ativo:</h3>
+                    <input id="investName" type="text" placeholder="MXRF11">
+            
+                </div>
+
+                <div style="display: flex; gap: 20px;">
+                    <div class="variable" style="display: none;">
+                        <h3>Quantidade de cotas/ações</h3>
+                        <input id="quantity" type="number" placeholder="1">
+                        <h3>Valor por cota/Ação</h3>
+                        <input id="unityValue" type="number" placeholder="9,17">
+                    </div>
+
+                    <div id="criptoDiv" style="display: none;">
+                        <h3>Valor investido:</h3>
+                        <input type="number" placeholder="123,45">
+
+                        <h3>Cripto comprada:</h3>
+                        <select style="width: 14vw;" name="" id="criptoComprada">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETh</option>
+                            <option value="Sol">SOL</option>
+                        </select>
+                    </div>
+                    
+                    <div id="viDiv">
+                        <h3>Valor investido:</h3>
+                        <input id="valor-investido" type="number" placeholder="12,34"> 
+                    </div>
+            
+                    <div>
+                        <h3>Moeda do investimento:</h3>
+                        <select name="" id="" style="width: 15vw;">
+                            <option class="moedaOption" value="USD">USD$</option>
+                            <option class="moedaOption"value="BRL">BRL$</option>
+                            <option class="moedaOption" value="EUR">EUR$</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                    <h3>Observações</h3>
+                    <input id="observações" type="text" placeholder="observações">
+                    <button onclick="setInvest()">Enviar</button>
+            </div>
+            <h1>Total investido:</h1>
+            <h3>Ganhos:</h3>
+            <h3>Percas:</h3>
+
+            <h1>Distribuição:</h1>
+        </div>
+        <h1 class="aviso">⚠️ Suas informações não vão ficar salvas, Entre ou cadastre-se para manter suas informações</h1>
+        <div class="investCards">
+        </div>
+    </section>
+    <script src="src/investimentos.js"></script>
+    <script src="src/loadUser.js"></script>
+</body>
+</html>

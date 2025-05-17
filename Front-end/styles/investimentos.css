@@ -1,0 +1,229 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: linear-gradient(0deg, #0e2929 , #2d8888 );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: antiquewhite;
+}
+img{
+    width: 30vh;
+    margin-left: 5vw;
+}
+header{
+    display: flex;
+    width: 101vw;
+
+}
+.loginBt{
+    padding: 17px;
+    background-color: rgb(0, 161, 161);
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    margin-left: 85vw;
+    margin-top: 15px;
+    cursor: pointer;
+    color: rgb(186, 254, 255);
+    transition: all 0.5s;
+}
+.createInvestments{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border:  solid #2d8888;
+   border-radius: 20px;
+   padding: 10px;
+   margin-top: 5vh;
+   margin-left: -5px;
+}
+.investInfo{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas:
+    "one three"
+    "two four"; 
+    gap: 20px;
+}
+.investInfo > :nth-child(1) {
+    grid-area: one;
+}
+.investInfo > :nth-child(2) {
+    grid-area: two;
+}
+.investInfo > :nth-child(3) {
+    grid-area: three;
+}
+.investInfo > :nth-child(4) {
+    grid-area: four;
+}
+.createInvestments input{
+    height: 30px;
+    margin-top: -15px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    padding: 5px;
+    color: azure;
+    font-size: 15px;
+}
+.createInvestments select{
+    height: 30px;
+    margin-top: -15px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+    color: aliceblue;
+    border-radius: 5px;
+}
+option{
+    background-color: #2d8888;
+    color: white;
+}
+.marketBar{
+    display: flex;
+    flex-direction: column;
+    width: 101vw;
+    height: 200px;
+}
+
+.rates{
+    box-shadow: 0px 0px 5px black;
+    border-radius: 20px;
+    padding: 7px;
+    padding-right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.mrh1{
+    margin-left: 40px;
+}
+.rate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 17px;
+}
+.rates hr{
+    width: 90%;
+}
+.etf{
+    margin-left: 21vw;
+}
+.etfh1{
+    margin-left: 22vw;
+    position: absolute;
+}
+.bract{
+    margin-left: 45.5vw;
+}
+.bracth1{
+    margin-left: 46.5vw;
+    position: absolute;
+}
+.usact{
+    margin-left: 68vw;
+}
+.usacth1{
+    position: absolute;
+    margin-left: 69vw;
+}
+.investArea{
+    width: 100vw;
+    display: flex;
+}
+.aviso{
+    width: 50vw;
+    margin-left: 50vw;
+    margin-top: 5vh;
+    position: absolute;
+}
+.investData{
+    margin-left: 3vw;
+}
+.variable{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid #2d8888;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+#criptoDiv{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid #2d8888;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+button{
+    padding: 10px;
+    color: aliceblue;
+    background-color: transparent;
+    border: solid #2d8888;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+button:hover{
+    background: #005757;
+    transform: scale(1.2);
+}
+.investCards{
+    margin-left: 2vw;
+    margin-top: 11vh;
+}
+.card{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px black;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0vh;
+    margin-bottom: 50px;
+    margin-left: -11px;
+}
+
+.card div{
+    display: flex;
+    flex-direction: column;
+}
+.card h3{
+    margin: 7px;
+    font-size: 15px;
+}
+.shadow{
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.card-edit{
+    margin-left: 1vw;
+}
+.historico{
+    height: 60%;
+    width: 95%;
+    border: solid #2d8888;
+}
+.uph{
+    width: 15vw;
+    margin-left: 1vw;
+}

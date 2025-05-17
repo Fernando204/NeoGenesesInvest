@@ -1,10 +1,4 @@
-const data = JSON.parse(localStorage.getItem("ngdb"));
-if (data.userName) {
-    document.getElementById('loginBT').innerHTML = data.userName;
-    console.log(data.userName);
-}else{
-    console.log("nenhum usuario logado");
-}
+
 
 function toggleSettings() {
     const settingsPanel = document.getElementById('settingsPanel');
@@ -22,13 +16,15 @@ function toggleProfile() {
     settingsPanel.classList.remove('open');
 }
 
+const toolsPanel = document.querySelector(".tools");
+const mainpage = document.querySelector(".mainpage");
 const toggleTools = ()=>{
-    const toolsPanel = document.querySelector(".tools");
-
     if (toolsPanel.style.display != "none") {
         toolsPanel.style.display = "none";
+        mainpage.style.display = "flex";
     }else{
         toolsPanel.style.display = "flex";
+        mainpage.style.display = "none";
     }
 }
 
@@ -37,6 +33,9 @@ const checkboxDarkmode = document.getElementById("toggleCheckbox-darkmode");
 
 //vê se o darkmode está ativado no LocalStorage
 if (localStorage.getItem("darkmode") === "enabled") {
+    document.body.classList.add("darkmode");
+    checkboxDarkmode.checked = true;
+}else if(!localStorage.getItem("darkmode")){
     document.body.classList.add("darkmode");
     checkboxDarkmode.checked = true;
 }
@@ -62,6 +61,8 @@ toolItens.forEach((item,index)=>{
         case 1:
             nextPage = "convert.html";
             break;
+        case 2:
+            nextPage = "investimentos.html";
         default:
             break;
             
@@ -73,9 +74,14 @@ toolItens.forEach((item,index)=>{
 })
 
 
-const closeSection = ()=>{
-    delete data.username;
-    localStorage.setItem("ngdb",JSON.stringify(data));
 
-    location.reload();
+/*
+configuração do localStorage:
+
+"ngdb":{
+    "user":{
+        "name": "example",
+        "id": 345
+    }
 }
+*/

@@ -8,7 +8,7 @@
     <title>Neogenesis</title>
 </head>
 <body>
-    <button id="loginBT" class="loginBT" onclick="window.location.href='login.html'">Login</button>
+    <button id="loginBT"class="loginBT" onclick="window.location.href='login.html'">Login</button>
     <div class="sidebar">
         <a href="index.html" class="menu-item" data-tooltip="Início"><i class="material-symbols-outlined">home</i></a>
         <a class="menu-item" data-tooltip="Usuário" onclick="toggleProfile()"><i class="material-symbols-outlined">person</i></a>
@@ -20,21 +20,52 @@
     <div class="logo">
         <img class="imagelogo" src="images/logoW.png" alt="logo Neogenesis">
     </div>
+    <div class="mainpage">
+        <div class="rates">
+            <div class="rate">
+                <h3 class="rateValue">14,25</h3>
+                <hr class="line">
+                <h3 class="rateName">Selic</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">14,15</h3>
+                <hr class="line">
+                <h3 class="rateName">CDI</h3>
+            </div>
+            <div class="rate">
+                <h3 class="rateValue">5,48</h3>
+                <hr class="line">
+                <h3 class="rateName">IPCA</h3>
+            </div>
+        </div>
+        <div class="benefits">
+            <div class="benefit">
+                <h2>📈 Monitoramento Completo</h2>
+                <p>Acompanhe o desempenho dos seus investimentos em tempo real.</p>
+            </div>
+            <div class="benefit">
+                <h2>🔔 Alertas Personalizados</h2>
+                <p>Receba notificações sobre oscilações no mercado.</p>
+            </div>
+            <div class="benefit">
+                <h2>🔍 Análises Detalhadas</h2>
+                <p>Gráficos interativos para entender sua rentabilidade.</p>
+            </div> 
+        </div>
+    </div>
 
     <div class="tools" style="display: none;">
         <div class="tool-item">
-            <i class="material-symbols-outlined">build</i>
-            <div class="tool-description">Renda Fixa: Investimentos de baixo risco e retorno fixo.</div>
+            <h4 class="tool-description">Calculadora de Renda fixa</h4>
         </div>
         <div class="tool-item">
-            <i class="material-symbols-outlined">build</i>
-            <div class="tool-description">Conversor de moedas: converte valores de moedas e Criptomoedas</div>
+            <h4 class="tool-description">Conversor de moedas</h4>
         </div>
         <div class="tool-item">
-            <i class="material-symbols-outlined">build</i>  
+            <h4 class="tool-description">Registro de Investimentos</h4>  
         </div>
         <div class="tool-item">
-            <i class="material-symbols-outlined">build</i>
+            <h4>Ferramenta</h4>
         </div>
      </div>    
 
@@ -64,5 +95,6 @@
    
     
     <script src="src/main.js"></script>
+    <script src="src/loadUser.js"></script>
 </body>
 </html>
