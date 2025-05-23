@@ -1,6 +1,4 @@
-
-
-function toggleSettings() {
+function toggleSettings() {//abre o painel de configurações 
     const settingsPanel = document.getElementById('settingsPanel');
     const profilePanel = document.getElementById('profilePanel');
 
@@ -8,7 +6,7 @@ function toggleSettings() {
     profilePanel.classList.remove('open');
 }
 
-function toggleProfile() {
+function toggleProfile() {//abre o painel de perfil
     const profilePanel = document.getElementById('profilePanel');
     const settingsPanel = document.getElementById('settingsPanel');
 

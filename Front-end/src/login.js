@@ -13,6 +13,7 @@ bt.addEventListener("click",()=>{
     fetch('http://localhost:8080/user/login',{
         method: "POST",
         headers: {"Content-Type": "application/json"},
+        credentials: "include",
         body: JSON.stringify({password: password,email: email})
     })
     .then(response =>{
@@ -28,10 +29,6 @@ bt.addEventListener("click",()=>{
         console.log(data);
         
         let dat = {user: null}
-
-        if (localStorage.getItem("ngdb")) {
-            localStorage.removeItem("ngdb");
-        }
         
         const userDat = {
             name: data.name,
@@ -40,8 +37,6 @@ bt.addEventListener("click",()=>{
         dat.user = userDat;
         
         alert(data.name+" logado com sucesso");
-        console.log(dat);
-        localStorage.setItem("ngdb",JSON.stringify(dat));//salva no localStorage
         location.href = "index.html"
     })
     .catch(error =>{

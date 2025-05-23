@@ -17,7 +17,7 @@ body{
     border: none;
     border-radius: 20px;
     position: absolute;
-    margin-left: 85vw;
+    margin-left: 70vw;
     margin-top: 15px;
     cursor: pointer;
     color: rgb(186, 254, 255);
@@ -27,13 +27,29 @@ header{
     position: fixed;
     top: 0;
     width: 101vw;
+    box-shadow: 0px 0px 5px black;
+
 }
 header img{
     width: 30vh;
 }
 abacate{
-    margin-top: 20vh;
+    margin-top: 5vh;
     height: 200px;
     width: 80vw;
     border: solid #2d8888;
+    border-radius: 20px;
+    padding: 20px;
+}
+.rates{
+    box-shadow: 0px 0px 5px black;
+    border-radius: 20px;
+    padding: 7px;
+    padding-right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rate{
+    margin-left: 17px;
 }

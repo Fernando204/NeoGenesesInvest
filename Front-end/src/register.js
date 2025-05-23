@@ -19,6 +19,7 @@ bt.addEventListener("click",()=>{
 
     fetch('http://localhost:8080/user/register',{
         method: "POST",
+        credentials: "include",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({password: password,email: email, name: name})
     })
@@ -33,23 +34,11 @@ bt.addEventListener("click",()=>{
         }
     })
     .then(data =>{
-        let dat = {user: null}
-
-        if (localStorage.getItem("ngdb")) {
-            localStorage.removeItem("ngdb");
-        }
-
-        const userDat = {
-            name: data.name,
-            id: data.id
-        }
-        dat.user = userDat
-
-        localStorage.setItem("ngdb",JSON.stringify(dat));
+        
         errorLabel.innerHTML = (data.name+" registrado com sucesso");
+        console.log("registrado com sucesso");
 
         location.href = "index.html"
     });
     
-        
 })
