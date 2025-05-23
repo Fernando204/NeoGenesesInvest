@@ -2,7 +2,6 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 body {
     margin: 0;
     overflow: hidden;
@@ -11,7 +10,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: darkcyan;
+    flex-direction: column;
+    background: linear-gradient(to top, #0e2929, #226666);
+}
+h1{
+    color: white;
+}
+img{
+    width: 40vh;
 }
 button{
     height: 4vh;
@@ -37,34 +43,8 @@ button:hover{
     border-radius: 5px;
     transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.logo{
-    position: absolute;
-    width: 500px;
-    height: 330px;
-    margin-top: -41vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: rgb(40, 201, 201);
-    z-index: 0;
-}
-.logo img{
-    width: 200px;   
-    position: absolute;
-    margin-top: -5vh;
-    margin-left: 0px;
-}
-.logo h1{
-    margin-top: 80px;
-}
-.logo p{
-    margin-top: -10px;
-    margin-left: -10px;
-}
 .loginBox{
-    height: 40vh;
-    width: 20vw;
-    background: rgb(0, 197, 197);
+    width: 27vw;
     border: solid 3px;
     border-color: rgb(0, 133, 115);
     border-radius: 30px;
@@ -72,6 +52,8 @@ button:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    padding-bottom: 5vh;
     z-index: 1;
 }
 #inputField{
@@ -80,4 +62,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#errorLabel{
+    color: rgb(255, 51, 51);
 }

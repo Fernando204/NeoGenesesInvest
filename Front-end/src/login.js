@@ -1,11 +1,19 @@
 const bt = document.getElementById("enterBT");
+const errorLabel = document.getElementById("errorLabel");
+
 bt.addEventListener("click",()=>{
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    if (!email || !password) {
+        errorLabel.innerHTML = "Por favor preencha todos os campos";
+        return;
+    }
+
     fetch('http://localhost:8080/user/login',{
         method: "POST",
         headers: {"Content-Type": "application/json"},
+        credentials: "include",
         body: JSON.stringify({password: password,email: email})
     })
     .then(response =>{
@@ -13,26 +21,31 @@ bt.addEventListener("click",()=>{
             return response.json();
         }else{
             return response.text().then(text=>{
-                alert("erro: "+text);
+                errorLabel.innerHTML = ("erro: "+text);
                 console.log(text)
             })
         }
     }).then(data =>{
+        console.log(data);
+        
+        let dat = {user: null}
+        
+        const userDat = {
+            name: data.name,
+            id: data.id
+        }
+        dat.user = userDat;
+        
         alert(data.name+" logado com sucesso");
-
-        const dat = JSON.parse(localStorage.getItem("ngdb")) || {};
-
-        dat.userName = data.name;
-        dat.userId = data.id; 
-
-        localStorage.setItem("ngdb",JSON.stringify(dat));
-
         location.href = "index.html"
     })
     .catch(error =>{
-        alert(error);
         console.log(error);
     })
     
-        
+   
 })
+//hello
+// word
+// when day is gone
+// today i will eat your ass with rice and beans ;

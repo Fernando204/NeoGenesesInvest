@@ -68,7 +68,7 @@ h1,h2,h3,h5,h4{
     margin-left: 5vw;
 }
 .convert input{
-    width: 6vw;
+    width: auto;
     height: 3vh;
     margin-left: 18px;
     background: none;
@@ -113,7 +113,7 @@ h1,h2,h3,h5,h4{
     height: 5px;
     background-color: aliceblue;
     position: absolute;
-    margin-top: 21.1vh;
+    margin-top: 20.1vh;
     transition: all 0.5s;
 }
 .page{
@@ -163,5 +163,5 @@ h1,h2,h3,h5,h4{
     flex-direction: column;
 }
 #criptosPage{
-    display: none;
+    display: none;          
 }
